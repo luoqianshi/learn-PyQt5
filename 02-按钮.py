@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
 
 if __name__ == '__main__':
     # 实例化QApplication类
@@ -10,13 +10,13 @@ if __name__ == '__main__':
     w = QWidget()
 
     # 设置窗口标题
-    w.setWindowTitle('第一个PyQt5程序')
+    w.setWindowTitle('PyQt5程序之按钮')
 
-    # 设置窗口大小
-    # w.resize(1400, 1300)
+    # 在窗口里面添加按钮控件
+    btn = QPushButton("按钮")
 
-    # 设置窗口位置
-    # w.move(400, 400)
+    # 把按钮绑定到对应的窗口，等于是添加到窗口中显示
+    btn.setParent(w)
 
     # 设置窗口背景色
     w.setStyleSheet("background-color: rgb(255, 255, 255);")
