@@ -30,6 +30,7 @@ class MyWindow(QWidget):
         # 切记一定要调用父类的__init__方法，因为它里面有很多对UI控件的初始化操作
         super().__init__()
         # 把对当前的窗口控件的具体的UI布局写到有个专门的方法中，以免初始化的方法内容太臃肿
+        self.windows_stack = None
         self.init_ui()
 
     def init_ui(self):
@@ -45,7 +46,7 @@ class MyWindow(QWidget):
         # 展示区控件
         display = QWidget()
         display.setStyleSheet("background-color:grey")
-        # 为展示区控件绑定抽屉布局(加上self的含义是让它变成一个全局变量)
+        # 为展示区控件绑定抽屉布局(加上self的含义是让它变成一个类变量)
         self.windows_stack = QStackedLayout()
         # 创建两个新的窗口对象
         window1 = Window1()
@@ -67,10 +68,10 @@ class MyWindow(QWidget):
 
         # 让当前的窗口使用布局器
         self.setLayout(outer_container)
-
+        
     def show_window1(self):
         self.windows_stack.setCurrentIndex(0)
-
+        
     def show_window2(self):
         self.windows_stack.setCurrentIndex(1)
 
@@ -79,9 +80,7 @@ if __name__ == '__main__':
     # 实例化QApplication类
     # sys.argv是命令行的参数
     app = QApplication(sys.argv)
-
     # 实例化QWidget子类——MyWindow
     w = MyWindow()
     w.show()
-
     app.exec_()

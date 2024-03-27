@@ -20,11 +20,10 @@ class MyWindow(QWidget):
         self.setWindowIcon(QIcon('imgs/clock.png'))
 
         # 垂直布局
-        outer_container = QVBoxLayout()
-        # outer_container = QHBoxLayout()
+        # outer_container = QVBoxLayout()
+        outer_container = QHBoxLayout()
 
         # 垂直布局器中有两个组，一个是爱好组，另一个是性别组
-
         hobby_group = QGroupBox("爱好")
         # 创建一个垂直布局器
         v_inner_layout = QVBoxLayout()
@@ -42,7 +41,7 @@ class MyWindow(QWidget):
         outer_container.addWidget(hobby_group)
 
         gender_group = QGroupBox("性别")
-        # 创建一个垂直布局器
+        # 创建一个水平布局器
         h_inner_layout = QHBoxLayout()
         # 在爱好组中加入可选的爱好
         boy = QRadioButton("男")
@@ -63,9 +62,7 @@ if __name__ == '__main__':
     # 实例化QApplication类
     # sys.argv是命令行的参数
     app = QApplication(sys.argv)
-
     # 实例化QWidget子类——MyWindow
     w = MyWindow()
     w.show()
-
     app.exec_()

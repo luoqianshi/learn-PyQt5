@@ -13,7 +13,7 @@ class MyWindow(QWidget):
 
     def init_ui(self):
         # 设置大小
-        self.resize(300, 300)
+        self.resize(400, 300)
         # 设置窗口标题
         self.setWindowTitle('PyQt5程序之QFormLayout')
         # 设置窗口图标
@@ -48,9 +48,7 @@ if __name__ == '__main__':
     # 实例化QApplication类
     # sys.argv是命令行的参数
     app = QApplication(sys.argv)
-
     # 实例化QWidget子类——MyWindow
     w = MyWindow()
     w.show()
-
     app.exec_()
