@@ -33,7 +33,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>在UI进程中进行</string>
+    <string>在UI线程中进行</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">

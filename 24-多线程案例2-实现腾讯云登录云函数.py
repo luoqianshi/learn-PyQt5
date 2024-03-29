@@ -79,10 +79,8 @@ class MyWidget(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-
     w = MyWidget()
     # 展示窗口
     # w.show()  # 在这种情况下这是一个错误示范
     w.ui.show()  # 这才是正确的操作
-
     sys.exit(app.exec_())
