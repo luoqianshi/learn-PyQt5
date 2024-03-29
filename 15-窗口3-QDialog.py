@@ -63,9 +63,7 @@ if __name__ == '__main__':
     # 实例化QApplication类
     # sys.argv是命令行的参数
     app = QApplication(sys.argv)
-
     # 实例化QMainWindow子类——MyQMainWindow
     w = MyQMainWindow()
     w.show()
-
     app.exec_()
