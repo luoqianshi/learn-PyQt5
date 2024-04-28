@@ -1,3 +1,9 @@
+"""
+在这个样例中，
+我们在QPixmap和QScrollArea中间加一层QWidget
+出现了QScrollArea的滑条无法正常使用的问题！！！
+!!!!!
+"""
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QScrollArea, QMainWindow
 import sys
@@ -14,13 +20,14 @@ class ScrollExample(QMainWindow):
         # 加载一个巨大的图片
         pixmap = QPixmap(r"..\imgs\huge_img.jpg")
 
+        inner_widget = QWidget()
         # 创建一个标签用于显示图片
-        image_label = QLabel()
+        image_label = QLabel(inner_widget)
         image_label.setPixmap(pixmap)
 
         # 创建一个滚动区域并设置内容
         scroll_area = QScrollArea()
-        scroll_area.setWidget(image_label)
+        scroll_area.setWidget(inner_widget)
         scroll_area.setWidgetResizable(True)
 
         self.setCentralWidget(scroll_area)
