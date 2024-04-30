@@ -1,6 +1,7 @@
 from xml.etree import ElementTree
-
 from lxml import etree
+
+ENCODE_METHOD = 'utf-8'
 
 def readXML():
     # 读取已有的 XML 标注文件
@@ -41,7 +42,13 @@ def writeXML(filepath):
     ymax.text = '150'
 
     # 将 XML 结构写入文件
-    xml_str = etree.tostring(root, pretty_print=True).decode()
+    # xml_str = etree.tostring(root, pretty_print=True).decode()
+
+    rough_string = ElementTree.tostring(root, 'utf8')
+    root_utf8 = etree.fromstring(rough_string)
+    # 将空格替换成制表符优化格式
+    xml_str = etree.tostring(root_utf8, pretty_print=True, encoding=ENCODE_METHOD).replace("  ".encode(), "\t".encode()).decode()
+
     with open(filepath, 'w') as f:
         f.write(xml_str)
 
