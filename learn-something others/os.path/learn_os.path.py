@@ -60,3 +60,14 @@ filename, extension = os.path.splitext(path)
 
 print(f'文件名: {filename}')
 print(f'扩展名: {extension}')
+
+'''
+7. str.endwith()
+'''
+file_path = '/path/to/file.txt'
+
+# 检查文件路径是否以指定后缀结尾
+if file_path.endswith('.txt'):
+    print(f'{file_path} 是以 .txt 结尾的文件路径')
+else:
+    print(f'{file_path} 不是以 .txt 结尾的文件路径')
