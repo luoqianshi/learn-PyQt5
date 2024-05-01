@@ -49,3 +49,14 @@ if os.path.isfile(path):
     print(f'{path} 是一个文件')
 else:
     print(f'{path} 不是一个文件')
+
+'''
+6. os.path.splitext()
+`os.path.splitext()`方法用于分割文件路径，获取文件名（包含前置路径）和拓展名
+'''
+# 分割文件路径，获取文件名和扩展名
+path = '/path/to/file.txt'
+filename, extension = os.path.splitext(path)
+
+print(f'文件名: {filename}')
+print(f'扩展名: {extension}')
