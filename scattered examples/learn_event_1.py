@@ -1,7 +1,11 @@
 from PyQt5.QtWidgets import QWidget, QApplication
 from PyQt5.QtCore import Qt
 
+CURSOR_DEFAULT = Qt.ArrowCursor
+CURSOR_POINT = Qt.PointingHandCursor
 CURSOR_DRAW = Qt.CrossCursor
+CURSOR_MOVE = Qt.ClosedHandCursor
+CURSOR_GRAB = Qt.OpenHandCursor
 
 class Canvas(QWidget):
     def __init__(self):
@@ -13,7 +17,7 @@ class Canvas(QWidget):
         self.setWindowTitle('Canvas 示例')
 
     def enterEvent(self, event):
-        self.override_cursor(CURSOR_DRAW)
+        self.override_cursor(CURSOR_MOVE)
 
     def leaveEvent(self, event):
         self.restore_cursor()
