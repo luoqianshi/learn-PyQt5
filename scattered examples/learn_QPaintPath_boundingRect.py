@@ -13,6 +13,7 @@ bounding_rect = path.boundingRect()
 
 # 打印边界矩形的坐标和尺寸
 print("Bounding Rect:")
+print("Point: ({}, {})".format(bounding_rect.x(), bounding_rect.y()))  # 默认获取的Point是左上角的Point
 print("Top Left Point: ({}, {})".format(bounding_rect.topLeft().x(), bounding_rect.topLeft().y()))
 print("Bottom Right Point: ({}, {})".format(bounding_rect.bottomRight().x(), bounding_rect.bottomRight().y()))
 print("Width: {}".format(bounding_rect.width()))
